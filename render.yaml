@@ -1,14 +1,22 @@
+#services:
+#  - type: web
+#    name: email-extension
+#    env: java
+#    buildCommand: ./mvnw clean package
+#    startCommand: java -jar target/*.jar
+#    plan: free
+#    envVars:
+#      - key: SPRING_DATASOURCE_URL
+#        sync: false
+#      - key: SPRING_DATASOURCE_USERNAME
+#        sync: false
+#      - key: SPRING_DATASOURCE_PASSWORD
+#        sync: false
 services:
   - type: web
     name: email-extension
-    env: java
-    buildCommand: ./mvnw clean package
-    startCommand: java -jar target/*.jar
+    env: docker
+    region: oregon
     plan: free
-    envVars:
-      - key: SPRING_DATASOURCE_URL
-        sync: false
-      - key: SPRING_DATASOURCE_USERNAME
-        sync: false
-      - key: SPRING_DATASOURCE_PASSWORD
-        sync: false
+    branch: master
+    dockerfilePath: ./Dockerfile
