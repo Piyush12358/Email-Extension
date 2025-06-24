@@ -16,7 +16,7 @@ services:
   - type: web
     name: email-extension
     env: docker
-    region: oregon
+    region: singapore
     plan: free
     branch: master
     dockerfilePath: ./Dockerfile
